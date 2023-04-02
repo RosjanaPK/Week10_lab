@@ -23,6 +23,21 @@ pipeline {
                 }
             }
         }
+        stage('Login Stage') {
+          steps {
+            echo "Login : Logging in . . ."
+            sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          }
+        }
+
+        stage('Push Stage') {
+            steps {
+                dir('Lab_jenkins_dockercompose') { // change directory to Lab_docker_Jenkins
+                    echo "Push : Current path is ${pwd()}"
+                    sh "docker-compose push"
+                }
+            }
+        }
 
     
        
