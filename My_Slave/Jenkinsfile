@@ -15,6 +15,22 @@ pipeline {
             sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
           }
         }
+        stage('Pull from Docker') {
+          steps {
+               dir('Lab_jenkins_dockercompose') { // change directory to Lab_docker_Jenkins
+                    echo "Pull . ."
+                    sh "docker-compose pull"
+                }
+          }
+        }
+        stage('Start stage') {
+            steps {
+                dir('Lab_jenkins_dockercompose') { // change directory to Lab_docker_Jenkins
+                    echo "Start . ."
+                    sh "docker-compose up -d"
+                }
+            }
+        }
  
 }
 }
