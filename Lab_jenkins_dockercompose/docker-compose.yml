@@ -82,7 +82,6 @@ services:
   # docker compose --profile seed up -d
   seed:
     build: ./seed-data
-    image: rosjana63070145/seed:1.0
     profiles: ["seed"]
     depends_on:
       vote:
