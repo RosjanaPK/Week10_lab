@@ -26,6 +26,7 @@ services:
 
   result:
     build: ./result
+    image: rosjana63070145/result:1.0
     # use nodemon rather than node for local dev
     entrypoint: nodemon server.js
     depends_on:
@@ -43,6 +44,7 @@ services:
   worker:
     build:
       context: ./worker
+    image: rosjana63070145/worker:1.0
     depends_on:
       redis:
         condition: service_healthy 
@@ -80,6 +82,7 @@ services:
   # docker compose --profile seed up -d
   seed:
     build: ./seed-data
+    image: rosjana63070145/seed:1.0
     profiles: ["seed"]
     depends_on:
       vote:
