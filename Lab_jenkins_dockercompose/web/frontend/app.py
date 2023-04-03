@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template
 import cv2
 import requests
-import uvicorn
+
 import base64
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -11,7 +11,6 @@ import numpy as np
 import cv2
 import json
 
-app = FastAPI()
 
 app = Flask(__name__,template_folder="")
 def encode_image(image):
@@ -51,7 +50,6 @@ def template():
     data = json.loads(response.content)
 
     processed_image_string = data["processed_image"]
-    processed_image        = decode_image(processed_image_string)
 
     return render_template("index.html", mycontent=image_string, mycontent2=image_string2, mycontent3=image_string3, name=data)    
 
