@@ -1,3 +1,8 @@
+# 63070145 Rosjana Homprasit
+
+### VDO ส่งงาน :
+https://drive.google.com/file/d/1u9bHjcLmNUiTKRQBvrSco9YG_kD1SLHx/view?usp=sharing
+
 # Install jenkins, docker, docker-compose, and git 
 
 ### 1. Open the install_git_docker_docker_compose.sh file :
