@@ -24,14 +24,14 @@ def decode_image(image_string):
     nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
     return cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-
+url        = "http://52.23.238.240:8088"
 
 @app.route('/')
 def template():
     image_file = 'pang.jpg'
     image_file2 = 'kai.jpg'
     image_file3 = 'mamon.jpg'
-    url        = "http://52.23.238.240:8088"
+    
 
     # Load the image
     image        = cv2.imread(image_file)
