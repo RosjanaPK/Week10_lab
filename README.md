@@ -2,6 +2,8 @@
 
 ### VDO ส่งงาน :
 https://drive.google.com/file/d/1u9bHjcLmNUiTKRQBvrSco9YG_kD1SLHx/view?usp=sharing
+### VDO ส่งงาน เวอร์ชั่น วิท มาย ฟ้อนเอน ค่ะ อาจารย์;-; :
+https://drive.google.com/file/d/1sffMM9re6PHaFWZ8l3wp18ymxB38Ky-e/view?usp=sharing
 
 # Install jenkins, docker, docker-compose, and git 
 
