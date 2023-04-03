@@ -13,7 +13,9 @@ from typing import List
 app = FastAPI()
 origins = [
     "http://52.23.238.240:8080",
-    "http://52.23.238.240:8088"
+    "http://52.23.238.240:8088",
+    "http://54.164.6.192:3000",
+    "https://stackpython.co"
    
 ]
 
