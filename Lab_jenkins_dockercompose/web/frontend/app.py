@@ -25,33 +25,34 @@ def decode_image(image_string):
     return cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
 
-image_file = 'pang.jpg'
-image_file2 = 'kai.jpg'
-image_file3 = 'mamon.jpg'
-url        = "http://52.23.238.240:8088"
-
-# Load the image
-image        = cv2.imread(image_file)
-image_string = encode_image(image)
-image2        = cv2.imread(image_file2)
-image_string2 = encode_image(image2)
-image3        = cv2.imread(image_file3)
-image_string3 = encode_image(image3)
-payload = {
-    "image": image_string,
-    "name": "pang",
-    "surname": "rosjana",
-    "numbers": [1, 2, 3, 4, 5]
-}
-response = requests.post(f"{url}/process-image", json=payload)
-
-data = json.loads(response.content)
-
-processed_image_string = data["processed_image"]
-processed_image        = decode_image(processed_image_string)
 
 @app.route('/')
 def template():
+    image_file = 'pang.jpg'
+    image_file2 = 'kai.jpg'
+    image_file3 = 'mamon.jpg'
+    url        = "http://52.23.238.240:8088"
+
+    # Load the image
+    image        = cv2.imread(image_file)
+    image_string = encode_image(image)
+    image2        = cv2.imread(image_file2)
+    image_string2 = encode_image(image2)
+    image3        = cv2.imread(image_file3)
+    image_string3 = encode_image(image3)
+    payload = {
+        "image": image_string,
+        "name": "pang",
+        "surname": "rosjana",
+        "numbers": [1, 2, 3, 4, 5]
+    }
+    response = requests.post(f"{url}/process-image", json=payload)
+
+    data = json.loads(response.content)
+
+    processed_image_string = data["processed_image"]
+    processed_image        = decode_image(processed_image_string)
+
     return render_template("index.html", mycontent=image_string, mycontent2=image_string2, mycontent3=image_string3, name=data)    
 
 if __name__ == '__main__':
