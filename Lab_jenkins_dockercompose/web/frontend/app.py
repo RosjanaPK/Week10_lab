@@ -24,7 +24,7 @@ def decode_image(image_string):
     nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
     return cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-url        = "http://52.23.238.240:8088"
+url = "http://52.23.238.240:8088"
 
 @app.route('/')
 def template():
