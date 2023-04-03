@@ -12,8 +12,8 @@ from typing import List
 
 app = FastAPI()
 origins = [
-    "http://localhost:8000",
-    "http://localhost:8001"
+    "http://54.196.158.62:8000",
+    "http://54.196.158.62:8001"
    
 ]
 

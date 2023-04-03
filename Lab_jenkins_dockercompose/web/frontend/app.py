@@ -28,7 +28,7 @@ def decode_image(image_string):
 image_file = 'pang.jpg'
 image_file2 = 'kai.jpg'
 image_file3 = 'mamon.jpg'
-url        = "http://localhost:8000"
+url        = "http://54.196.158.62:8000"
 
 # Load the image
 image        = cv2.imread(image_file)
