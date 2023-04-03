@@ -1,3 +1,4 @@
+services:
 frontend:
     build: ./web/frontend
     image: rosjana63070145/frontend:1.0
